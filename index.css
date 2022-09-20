@@ -104,11 +104,39 @@ nav ul li a{
     margin-left: 80px;
     width:500px;
 }
+.t1{
+    color:white;
+    font-size: 35px;
+}
+.t2{
+    color:#70FF00;font-size: 50px;
+}
+.t3{
+    color:white;font-size: 45px;
+}
 .exp_proj{
     margin-left: 80px;
     width:550px;
     color:#858483;
     height:90px;
+}
+.exp{
+    width:160px;float: left;
+}
+.t4{
+    font-size:65px;float: left;
+}
+.t5{
+    font-size: 15px;margin-left: 3px;
+}
+.proj{
+    width:260px;float: left;
+}
+.t6{
+    font-size:65px;float: left;
+}
+.t7{
+    font-size: 15px;margin-left:3px;
 }
 .AboutMe{
     margin-top: 80px;
@@ -125,6 +153,10 @@ nav ul li a{
     margin-left:850px;
     height:350px;
     width:350px;
+}
+.profile_pic img{
+    height:350;
+    width:370px;
 }
 .card1{
     padding: 5px;
@@ -159,4 +191,144 @@ nav ul li a{
     padding: 5px;
     margin-left: 10px;
     margin-top: 50px;
+}
+@media only screen and (max-width: 600px) {
+.header{
+    width: 100%;
+    height:150px;
+   /* border: solid white 2px;*/
+}
+.header .name span{
+font-size: 20px;
+}
+nav ul{
+    font-size: 15px;
+}
+.navtext1{
+    margin-left: 5px;
+}
+.navtext1 li{
+    padding-left: 5px;
+}
+.navtext2{
+    margin-left: 80px;
+}
+.navtext2 li{
+    padding-left: 0 px;
+}
+.navtext3{
+    margin-left: 5px;
+}
+.navtext3 li{
+    padding-left: 5px;
+}
+.container1{
+    margin-top: 2px;
+    width:100%;
+    height:auto;
+/*  border: solid white 2px;*/
+}
+.leftSide{
+    float: none;
+  /*border: solid red 2px;*/
+}
+.intro{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 100px;
+    margin-left: 80px;
+    width:100%;
+}
+.t1{
+    color:white;
+    font-size: 25px;
+}
+.t2{
+    color:#70FF00;font-size: 40px;
+}
+.t3{
+    color:white;font-size: 35px;
+}
+.exp_proj{
+    padding: 5px;
+    width:100%;
+    color:#858483;
+    height:80px;
+}
+.exp{
+    width:100%;
+}
+.t4{
+    font-size:45px;float: left;
+}
+.t5{
+    font-size: 10px;margin-left: 3px;
+}
+.proj{
+    width: 100%;
+}
+.t6{
+    font-size:45px;
+    float: left;
+}
+.t7{
+    font-size: 10px;
+    margin-left:3px;
+}
+.AboutMe{
+    margin-top: 80px;
+    margin-left: 5px;
+    color: white;
+    width:100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.profile_pic{
+    position: absolute;
+    background-image:linear-gradient( to bottom right,rgb(17, 17, 17), rgb(51, 51, 51));
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px 0px black;
+    margin-top: -580px;
+    margin-left:240px;
+    height:130px;
+    width:130px;
+}
+.profile_pic img{
+    height:130;
+    width:140px;
+}
+.card1{
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+    border: solid white 0px;
+    box-shadow: 0px 0px 8px black;
+    width: 350px;
+    height:80px;
+    background-color:#4F4F4F;
+}
+.card2{
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+    border: solid white 0px;
+    box-shadow: 0px 0px 8px black;
+    width: 350px;
+    height:80px;
+    background-color:#4F4F4F;
+    margin-bottom: 10px;
+}
+.container2{
+    background-color: #161616;
+    width: 100%;
+    height: 400px;
+    padding: 5px;
+}
+.container2 img{
+    height:50px;
+    width:50px;
+    padding: 5px;
+    margin-left: 10px;
+    margin-top: 50px;
+}
 }
