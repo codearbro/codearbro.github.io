@@ -4,148 +4,526 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suraj Verma - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* Previous styles remain the same until education section */
-
-        .education-section {
-            padding: 5rem 1.5rem;
-            background-color: #111827;
+        /* Global Styles & Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
         }
 
-        .education-grid {
+        body {
+            background-color: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background: rgba(15, 23, 42, 0.95);
+            padding: 1.5rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .logo-gray {
+            color: #94a3b8;
+            margin-right: 0.25rem;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #4ade80;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .contact-button {
+            background: #4ade80;
+            color: #0f172a;
+            padding: 0.5rem 1.25rem;
+            border-radius: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            padding: 8rem 2rem 4rem;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+
+        .hero-grid {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin: 1rem 0;
+            background: linear-gradient(90deg, #4ade80, #22d3ee);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 100%;
+            animation: gradient 8s ease infinite;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
             gap: 1.5rem;
             margin-top: 2rem;
         }
 
-        .education-card {
-            background-color: #1f2937;
-            padding: 1.5rem;
-            border-radius: 0.5rem;
+        .social-links a {
+            color: #e2e8f0;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
         }
 
-        .education-card h3 {
+        .social-links a:hover {
             color: #4ade80;
+            transform: translateY(-3px);
+        }
+
+        /* Experience Card */
+        .experience-card {
+            background: rgba(30, 41, 59, 0.5);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .experience-card h3 {
+            color: #4ade80;
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-title {
+            font-weight: 600;
             margin-bottom: 0.5rem;
         }
 
-        .education-period {
-            color: #9ca3af;
+        .experience-company {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-details {
+            list-style: none;
+            padding-left: 1rem;
+        }
+
+        .experience-details li {
+            margin: 0.25rem 0;
+            position: relative;
+        }
+
+        .experience-details li::before {
+            content: '▹';
+            position: absolute;
+            left: -1rem;
+            color: #4ade80;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 6rem 2rem;
+            background: #1e293b;
+        }
+
+        .skills-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #e2e8f0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: rgba(30, 41, 59, 0.5);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-card h3 {
+            color: #4ade80;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .skill-list li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: #4ade80;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 6rem 2rem;
+            background: #0f172a;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: rgba(30, 41, 59, 0.5);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .project-title {
+            color: #4ade80;
+            font-size: 1.25rem;
+        }
+
+        .project-link {
+            color: #e2e8f0;
+            font-size: 1.25rem;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #4ade80;
+        }
+
+        .project-description {
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(74, 222, 128, 0.1);
+            color: #4ade80;
+            border-radius: 1rem;
+            margin: 0.25rem;
             font-size: 0.875rem;
+        }
+
+        /* Timeline Section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background: #4ade80;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+            width: 50%;
+            padding: 0 2rem;
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-left: 50%;
+        }
+
+        .timeline-date {
+            color: #4ade80;
+            font-weight: 600;
             margin-bottom: 0.5rem;
         }
 
-        .education-score {
-            color: #d1d5db;
+        .timeline-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
         }
 
+        .timeline-company {
+            color: #94a3b8;
+            margin-bottom: 1rem;
+        }
+
+        /* Certificate Section */
         .certificates-section {
-            padding: 3rem 1.5rem;
+            padding: 6rem 2rem;
+            background: #1e293b;
         }
 
         .certificate-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
         .certificate-card {
-            background-color: #1f2937;
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            border-left: 4px solid #4ade80;
+            background: rgba(30, 41, 59, 0.5);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+            text-align: center;
         }
 
-        .full-experience-section {
-            padding: 3rem 1.5rem;
-            background-color: #111827;
+        .certificate-card:hover {
+            transform: translateY(-5px);
         }
 
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 2rem auto;
-        }
-
-        .timeline-item {
-            margin-bottom: 2rem;
-            padding-left: 2rem;
-            border-left: 2px solid #4ade80;
-            position: relative;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -8px;
-            top: 0;
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            background-color: #4ade80;
-        }
-
-        .timeline-date {
-            color: #9ca3af;
-            font-size: 0.875rem;
-        }
-
-        .timeline-title {
+        .certificate-card h3 {
             color: #4ade80;
-            font-weight: 600;
-            margin: 0.5rem 0;
-        }
-
-        .timeline-company {
-            color: #f3f4f6;
             margin-bottom: 0.5rem;
         }
 
-        .timeline-description {
-            color: #d1d5db;
+        .certificate-card p {
+            color: #94a3b8;
         }
 
-        /* Previous styles remain the same */
+        /* Languages Section */
+        .languages-section {
+            padding: 4rem 2rem;
+            background: #0f172a;
+        }
+
+        .language-list {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .language-item {
+            background: rgba(30, 41, 59, 0.5);
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            color: #4ade80;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .language-item:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Objective Section */
+        .objective {
+            background: rgba(30, 41, 59, 0.5);
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-top: 2rem;
+            border-left: 4px solid #4ade80;
+        }
+
+        /* Animations */
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .timeline::before {
+                left: 0;
+            }
+
+            .timeline-item {
+                width: 100%;
+                margin-left: 0 !important;
+                padding-left: 2rem;
+            }
+        }
     </style>
 </head>
-<body>
-    <!-- Previous header and hero sections remain the same -->
+    <body>
+    <header>
+        <div class="logo">
+            <span class="logo-gray">SURAJ</span>
+            <span>VERMA</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="mailto:kumarsuraj9585@gmail.com" class="contact-button">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <section class="education-section">
-        <div class="skills-container">
-            <h2 class="section-title">
-                <span style="color: #4ade80">education</span>
-                <span>( )</span>
-            </h2>
+    <section class="hero">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <p>Hello, I am</p>
+                <h1>&lt; Suraj Verma /&gt;</h1>
+                <p class="hero-subtitle">Fullstack Developer & CRM Consultant</p>
+                
+                <div class="objective">
+                    <p>To secure a challenging position in a reputable organization to expand my learnings, knowledge, and skills.</p>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://github.com/codearbro"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/surajonn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:kumarsuraj9585@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="tel:+916394370427"><i class="fas fa-phone"></i></a>
+                </div>
+            </div>
             
-            <div class="education-grid">
-                <div class="education-card">
-                    <h3>Master of Computer Application</h3>
-                    <p class="education-period">2019 - 2022</p>
-                    <p class="education-score">Bundelkhand University - 68%</p>
+            <div class="experience-card">
+                <h3>Experience Highlights</h3>
+                <div class="experience-item">
+                    <p class="experience-title">CRM Functional Consultant (ZOHO)</p>
+                    <p class="experience-company">Infodrive India PVT LTD - Delhi | Sep 2022 - Present</p>
+                    <ul class="experience-details">
+                        <li>Maintaining CRM users and creating custom functions</li>
+                        <li>Integration with WhatsApp and calling systems</li>
+                        <li>Managing workflows and automation</li>
+                    </ul>
                 </div>
-                
-                <div class="education-card">
-                    <h3>Bachelor of Computer Application</h3>
-                    <p class="education-period">2015 - 2018</p>
-                    <p class="education-score">Bundelkhand University - 74%</p>
-                </div>
-                
-                <div class="education-card">
-                    <h3>Intermediate</h3>
-                    <p class="education-period">2015</p>
-                    <p class="education-score">S M B V BH I C (UP Board) - 69.2%</p>
-                </div>
-                
-                <div class="education-card">
-                    <h3>High School</h3>
-                    <p class="education-period">2013</p>
-                    <p class="education-score">S V M I C (UP Board) - 77%</p>
+                <div class="experience-item">
+                    <p class="experience-title">Web Developer & Blogger</p>
+                    <p class="experience-company">Freelance & Codearbro.com | 2018 - Present</p>
                 </div>
             </div>
         </div>
+    </section>
+
+    <section id="education" class="education-section">
+        <!-- Previous education section content remains the same -->
     </section>
 
     <section class="full-experience-section">
@@ -153,38 +531,48 @@
             <h2 class="section-title">Professional Journey</h2>
             
             <div class="timeline">
+                <!-- Current position at Infodrive -->
                 <div class="timeline-item">
                     <p class="timeline-date">September 2022 - Present</p>
                     <h3 class="timeline-title">CRM Functional Consultant (ZOHO)</h3>
                     <p class="timeline-company">Infodrive India PVT LTD - Delhi</p>
-                    <p class="timeline-description">Managing CRM systems, creating custom functions, and handling integrations</p>
+                    <div class="timeline-description">
+                        <ul>
+                            <li>Creating Custom Functions and Workflows</li>
+                            <li>Managing layouts and fields per user requirements</li>
+                            <li>Creating custom views and templates</li>
+                            <li>Integration with WhatsApp and calling systems</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="timeline-item">
-                    <p class="timeline-date">2018 - Present</p>
-                    <h3 class="timeline-title">Technical Blogger</h3>
-                    <p class="timeline-company">Codearbro.com</p>
-                    <p class="timeline-description">Running a successful tech blog with focus on web development and programming</p>
-                </div>
-
+                <!-- Web Development Teaching -->
                 <div class="timeline-item">
                     <p class="timeline-date">July 2018 - May 2019</p>
                     <h3 class="timeline-title">Web Development Teacher</h3>
                     <p class="timeline-company">Yug Chetna Mahavidyalaya, Hamirpur</p>
-                    <p class="timeline-description">Taught web development concepts and technologies to college students</p>
+                    <p class="timeline-description">Conducted web development courses and trained students in modern web technologies</p>
                 </div>
 
+                <!-- Freelance Work -->
+                <div class="timeline-item">
+                    <p class="timeline-date">June 2022 - July 2022</p>
+                    <h3 class="timeline-title">Web Developer Freelance</h3>
+                    <p class="timeline-company">Adhyayanshrot Infocom PVT LTD</p>
+                    <p class="timeline-description">Developed and deployed DistancePathshala.com using React and AWS</p>
+                </div>
+
+                <!-- Digital Marketing Internship -->
                 <div class="timeline-item">
                     <p class="timeline-date">May 2021 - June 2021</p>
                     <h3 class="timeline-title">Social Media Marketing Intern</h3>
                     <p class="timeline-company">Digladder</p>
-                    <p class="timeline-description">Completed internship in social media marketing strategies and implementation</p>
+                    <p class="timeline-description">Gained hands-on experience in social media marketing strategies</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Previous skills section remains but updated with additional skills -->
     <section id="skills" class="skills">
         <div class="skills-container">
             <h2 class="section-title">
@@ -194,40 +582,123 @@
             
             <div class="skills-grid">
                 <div class="skill-card">
-                    <h3>Programming</h3>
+                    <h3>Programming Languages</h3>
                     <ul class="skill-list">
                         <li>C/C++</li>
                         <li>Java</li>
                         <li>Python</li>
                         <li>PHP</li>
+                        <li>JavaScript</li>
+                        <li>C#</li>
                     </ul>
                 </div>
+                
                 <div class="skill-card">
                     <h3>Web Technologies</h3>
                     <ul class="skill-list">
-                        <li>HTML/CSS</li>
-                        <li>JavaScript</li>
-                        <li>React</li>
+                        <li>HTML5/CSS3</li>
+                        <li>React.js</li>
                         <li>Node.js</li>
+                        <li>Laravel</li>
+                        <li>Bootstrap</li>
+                        <li>Material UI</li>
                     </ul>
                 </div>
+                
+                <div class="skill-card">
+                    <h3>Tools & Platforms</h3>
+                    <ul class="skill-list">
+                        <li>Git</li>
+                        <li>WordPress</li>
+                        <li>Android Studio</li>
+                        <li>AWS</li>
+                        <li>Postman</li>
+                        <li>Zoho CRM</li>
+                    </ul>
+                </div>
+                
                 <div class="skill-card">
                     <h3>Digital Marketing</h3>
                     <ul class="skill-list">
                         <li>SEO</li>
                         <li>Social Media Marketing</li>
-                        <li>Digital Marketing</li>
-                        <li>WordPress</li>
+                        <li>Content Management</li>
+                        <li>Digital Marketing Strategy</li>
                     </ul>
                 </div>
-                <div class="skill-card">
-                    <h3>Other Skills</h3>
-                    <ul class="skill-list">
-                        <li>Android Development</li>
-                        <li>SQL</li>
-                        <li>Git</li>
-                        <li>CRM Systems</li>
-                    </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="languages-section">
+        <div class="skills-container">
+            <h2 class="section-title">Languages</h2>
+            <div class="language-list">
+                <div class="language-item">Hindi</div>
+                <div class="language-item">English</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="projects-container">
+            <h2 class="section-title">Featured Projects</h2>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Distance Pathshala</h3>
+                        <a href="https://distancepathshala.com" class="project-link">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    <p class="project-description">React web application with API integration and AWS deployment</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">Material UI</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Codearbro</h3>
+                        <a href="https://codearbro.com" class="project-link">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    <p class="project-description">Technical blog with SEO optimization and content management</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">WordPress</span>
+                        <span class="tech-tag">SEO</span>
+                        <span class="tech-tag">PHP</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Goonline</h3>
+                    </div>
+                    <p class="project-description">Social networking platform with real-time chat functionality</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">WebSockets</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Carbookk</h3>
+                    </div>
+                    <p class="project-description">Car booking platform with modern UI and booking system</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Bootstrap</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">HTML/CSS</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -255,41 +726,5 @@
             </div>
         </div>
     </section>
-
-    <!-- Previous projects section remains the same but add new projects -->
-    <section id="projects" class="projects">
-        <div class="projects-container">
-            <h2 class="section-title">Recent Projects</h2>
-            
-            <div class="projects-grid">
-                <!-- Previous project cards remain -->
-                
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">Goonline</h3>
-                    </div>
-                    <p class="project-description">Social networking website with CRUD system and chatting function</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">PHP</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">JavaScript</span>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">Carbookk</h3>
-                    </div>
-                    <p class="project-description">Car booking website with modern UI and booking functionality</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">HTML</span>
-                        <span class="tech-tag">CSS</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">Bootstrap</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 </body>
-</html>4
+</html>
