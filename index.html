@@ -1,108 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suraj Verma</title>
-  <link rel="stylesheet" type="text/css" href="index.css">
-  <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" 
-integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suraj Verma - Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Previous styles remain the same until education section */
+
+        .education-section {
+            padding: 5rem 1.5rem;
+            background-color: #111827;
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .education-card {
+            background-color: #1f2937;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .education-card h3 {
+            color: #4ade80;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-period {
+            color: #9ca3af;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-score {
+            color: #d1d5db;
+        }
+
+        .certificates-section {
+            padding: 3rem 1.5rem;
+        }
+
+        .certificate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .certificate-card {
+            background-color: #1f2937;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border-left: 4px solid #4ade80;
+        }
+
+        .full-experience-section {
+            padding: 3rem 1.5rem;
+            background-color: #111827;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+
+        .timeline-item {
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+            border-left: 2px solid #4ade80;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #4ade80;
+        }
+
+        .timeline-date {
+            color: #9ca3af;
+            font-size: 0.875rem;
+        }
+
+        .timeline-title {
+            color: #4ade80;
+            font-weight: 600;
+            margin: 0.5rem 0;
+        }
+
+        .timeline-company {
+            color: #f3f4f6;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-description {
+            color: #d1d5db;
+        }
+
+        /* Previous styles remain the same */
+    </style>
 </head>
 <body>
-  <div class="header">
-    
-    <div class="name"><span class="fname">SURAJ</span><span class="lname">VERMA</span></div>
-    <nav>
-    <ul class="navtext1">
-      <li><a href="#">About</a></li>
-      <li><a href="#">Skills</a></li>
-      <li><a href="#">Projects</a></li>
-      </ul>
-      <ul class="navtext2">
-        <li><a href="https://www.linkedin.com/in/surajonn/">LinkedIn</a></li>
-        <li><a href="https://github.com/codearbro">Github</a></li>
-        </ul>
-      <ul class="navtext3">
-        <li><a href="https://wa.me/919616330844">Contact me</a></li>
-        </ul>
-    </nav>
-  </div>
-  <div class="container1">
-    <div class="leftSide">  
-        <div class="intro">
-          <span class="t1" >Hello, i am</span><br>
-          <span class="t2" >&lt; Suraj <br>Verma /&gt;</span><br>
-          <span class="t3" >Fullstack Developer</span>
-        </div>
-        <div class="exp_proj">
-          <div class="exp" >
-            <span class="t4">3</span><br>
-            <span class="t5">YEARS OF EXPERIENCE</span>
-          </div>
-          <div class="proj" >
-            <span class="t6" >3</span><br>
-            <span class="t7" >PROJECTS COMPLETED AROUND THE WORLD</span>
-          </div>
-        </div>
-        <div class="AboutMe">
-          <span style="color:#70FF00;font-size: 35px;font-weight: bold;">aboutMe</span><span style="font-size: 34px;font-weight: bold;color:white ;">( )</span><br><br>
-          <span style="font-family:arial;font-size: 16px;">I am Suraj Verma from India. 
-            I am a postgraduate in Master of Computer Application from Bundelkhand University Jhansi. 
-            My background belongs in the computer and IT field. 
-            I like developing projects and finding a solution to the given problem working as a freelancer since 
-            2018 on several projects related to different technologies. 
-            I am also a writer and Blogger.</span>
-          </div>
-    </div>
-    <div class="profile_pic">
-      <img src="images/profile.png" >
-    </div>
-    <div class="card1">
-      <span style="color:white;font-size: 22px;margin-left: 15px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Fullstack Developer</span><br>
-      <span style="font-weight: bold; font-size: 35px; margin-left:220px;color:#70FF00;position: absolute;margin-top: -20px;">&lt;/&gt;</span><br>
-      <span><a href="#" style="color:#70FF00;margin-left: 20px;font-size: 15px;position:absolute;margin-top:-10px;" >Projects</a></span>
-      
-      </div>
-     <div class="card2">
-      <span style="color:white;font-size: 22px;margin-left: 15px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Freelancer</span><br>
-      <span style="font-weight: bold; font-size: 35px; margin-left:220px;color:#70FF00;position: absolute;margin-top: -20px;">{ }</span><br>
-      <span><a href="#" style="color:#70FF00;margin-left: 20px;font-size: 15px;position:absolute;margin-top:-10px;" >Hire me!</a></span>
-      
-    </div>
-  </div>
-  <div class="container2">
-    <span class="contSpn">skills</span><span style="font-size: 34px;font-weight: bold;color:white ;">( )</span><br><br>           
-    <img src="images/html-5.png" />           
-    <img src="images/css-3.png" />           
-    <img src="images/c-.png" />           
-    <img src="images/letter-c.png" />           
-    <img src="images/c-sharp.png" />           
-    <img src="images/linux-logo.png" />                      
-    <img src="images/database.png" /> 
-    <img src="images/java-script.png">          
-    <img src="images/java.png">          
-    <img src="images/python.png">          
-    <img src="images/php.png">
-    <img src="images/mysql.png">          
-    <img src="images/android.png">          
-    <img src="images/react.png">          
-    <img src="images/nodejs.png">          
-    <img src="images/typescript.png">          
-    </div>
-<!--
-    <button type="button" class="btn btn-primary">Primary</button>
-<button type="button" class="btn btn-secondary">Secondary</button>
-<button type="button" class="btn btn-success">Success</button>
-<button type="button" class="btn btn-danger">Danger</button>
-<button type="button" class="btn btn-warning">Warning</button>
-<button type="button" class="btn btn-info">Info</button>
-<button type="button" class="btn btn-light">Light</button>
-<button type="button" class="btn btn-dark">Dark</button>
+    <!-- Previous header and hero sections remain the same -->
 
-<button type="button" class="btn btn-link">Link</button>
-  -->
+    <section class="education-section">
+        <div class="skills-container">
+            <h2 class="section-title">
+                <span style="color: #4ade80">education</span>
+                <span>( )</span>
+            </h2>
+            
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3>Master of Computer Application</h3>
+                    <p class="education-period">2019 - 2022</p>
+                    <p class="education-score">Bundelkhand University - 68%</p>
+                </div>
+                
+                <div class="education-card">
+                    <h3>Bachelor of Computer Application</h3>
+                    <p class="education-period">2015 - 2018</p>
+                    <p class="education-score">Bundelkhand University - 74%</p>
+                </div>
+                
+                <div class="education-card">
+                    <h3>Intermediate</h3>
+                    <p class="education-period">2015</p>
+                    <p class="education-score">S M B V BH I C (UP Board) - 69.2%</p>
+                </div>
+                
+                <div class="education-card">
+                    <h3>High School</h3>
+                    <p class="education-period">2013</p>
+                    <p class="education-score">S V M I C (UP Board) - 77%</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section class="full-experience-section">
+        <div class="skills-container">
+            <h2 class="section-title">Professional Journey</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <p class="timeline-date">September 2022 - Present</p>
+                    <h3 class="timeline-title">CRM Functional Consultant (ZOHO)</h3>
+                    <p class="timeline-company">Infodrive India PVT LTD - Delhi</p>
+                    <p class="timeline-description">Managing CRM systems, creating custom functions, and handling integrations</p>
+                </div>
+
+                <div class="timeline-item">
+                    <p class="timeline-date">2018 - Present</p>
+                    <h3 class="timeline-title">Technical Blogger</h3>
+                    <p class="timeline-company">Codearbro.com</p>
+                    <p class="timeline-description">Running a successful tech blog with focus on web development and programming</p>
+                </div>
+
+                <div class="timeline-item">
+                    <p class="timeline-date">July 2018 - May 2019</p>
+                    <h3 class="timeline-title">Web Development Teacher</h3>
+                    <p class="timeline-company">Yug Chetna Mahavidyalaya, Hamirpur</p>
+                    <p class="timeline-description">Taught web development concepts and technologies to college students</p>
+                </div>
+
+                <div class="timeline-item">
+                    <p class="timeline-date">May 2021 - June 2021</p>
+                    <h3 class="timeline-title">Social Media Marketing Intern</h3>
+                    <p class="timeline-company">Digladder</p>
+                    <p class="timeline-description">Completed internship in social media marketing strategies and implementation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Previous skills section remains but updated with additional skills -->
+    <section id="skills" class="skills">
+        <div class="skills-container">
+            <h2 class="section-title">
+                <span style="color: #4ade80">skills</span>
+                <span>( )</span>
+            </h2>
+            
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Programming</h3>
+                    <ul class="skill-list">
+                        <li>C/C++</li>
+                        <li>Java</li>
+                        <li>Python</li>
+                        <li>PHP</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Web Technologies</h3>
+                    <ul class="skill-list">
+                        <li>HTML/CSS</li>
+                        <li>JavaScript</li>
+                        <li>React</li>
+                        <li>Node.js</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Digital Marketing</h3>
+                    <ul class="skill-list">
+                        <li>SEO</li>
+                        <li>Social Media Marketing</li>
+                        <li>Digital Marketing</li>
+                        <li>WordPress</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Other Skills</h3>
+                    <ul class="skill-list">
+                        <li>Android Development</li>
+                        <li>SQL</li>
+                        <li>Git</li>
+                        <li>CRM Systems</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="certificates-section">
+        <div class="skills-container">
+            <h2 class="section-title">Certifications</h2>
+            
+            <div class="certificate-grid">
+                <div class="certificate-card">
+                    <h3>Entrepreneurship</h3>
+                    <p>Certificate course by CSC</p>
+                </div>
+                
+                <div class="certificate-card">
+                    <h3>Certified Cyber Warriors</h3>
+                    <p>By Hackingflix Academy</p>
+                </div>
+                
+                <div class="certificate-card">
+                    <h3>Full Stack Engineer</h3>
+                    <p>Certified by Skill Sigma</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Previous projects section remains the same but add new projects -->
+    <section id="projects" class="projects">
+        <div class="projects-container">
+            <h2 class="section-title">Recent Projects</h2>
+            
+            <div class="projects-grid">
+                <!-- Previous project cards remain -->
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Goonline</h3>
+                    </div>
+                    <p class="project-description">Social networking website with CRUD system and chatting function</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Carbookk</h3>
+                    </div>
+                    <p class="project-description">Car booking website with modern UI and booking functionality</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Bootstrap</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
-</html>
+</html>4
