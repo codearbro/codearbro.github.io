@@ -350,6 +350,27 @@
             margin-bottom: 1rem;
         }
 
+        .timeline-description {
+            color: #e2e8f0;
+        }
+
+        .timeline-description ul {
+            list-style: none;
+            padding-left: 1rem;
+        }
+
+        .timeline-description li {
+            margin: 0.25rem 0;
+            position: relative;
+        }
+
+        .timeline-description li::before {
+            content: '▹';
+            position: absolute;
+            left: -1rem;
+            color: #4ade80;
+        }
+
         /* Certificate Section */
         .certificates-section {
             padding: 6rem 2rem;
@@ -419,6 +440,46 @@
             border-left: 4px solid #4ade80;
         }
 
+        /* Education Section */
+        .education-section {
+            padding: 6rem 2rem;
+            background: #0f172a;
+        }
+
+        .education-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .education-card {
+            background: rgba(30, 41, 59, 0.5);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .education-degree {
+            color: #4ade80;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-institute {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-period {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
         /* Animations */
         @keyframes gradient {
             0% {
@@ -467,7 +528,7 @@
         }
     </style>
 </head>
-    <body>
+<body>
     <header>
         <div class="logo">
             <span class="logo-gray">SURAJ</span>
@@ -479,17 +540,18 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="mailto:kumarsuraj9585@gmail.com" class="contact-button">Contact Me</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero">
+    <section class="hero" id="about">
         <div class="hero-grid">
             <div class="hero-content">
                 <p>Hello, I am</p>
                 <h1>&lt; Suraj Verma /&gt;</h1>
-                <p class="hero-subtitle">Fullstack Developer & CRM Consultant</p>
+                <p class="hero-subtitle">Software Developer & CRM Consultant</p>
                 
                 <div class="objective">
                     <p>To secure a challenging position in a reputable organization to expand my learnings, knowledge, and skills.</p>
@@ -506,68 +568,96 @@
             <div class="experience-card">
                 <h3>Experience Highlights</h3>
                 <div class="experience-item">
-                    <p class="experience-title">CRM Functional Consultant (ZOHO)</p>
-                    <p class="experience-company">Infodrive India PVT LTD - Delhi | Sep 2022 - Present</p>
+                    <p class="experience-title">Software Developer</p>
+                    <p class="experience-company">CRM Masters Infotech LLP | Jan 2024 - Present</p>
                     <ul class="experience-details">
-                        <li>Maintaining CRM users and creating custom functions</li>
-                        <li>Integration with WhatsApp and calling systems</li>
-                        <li>Managing workflows and automation</li>
+                        <li>Working on Hubspot, Zoho CRM, WordPress, Shopify, Zoho Creator</li>
+                        <li>Technologies: Nodejs, ReactJs, PHP, Deluge, SQL, Javascript</li>
                     </ul>
                 </div>
                 <div class="experience-item">
-                    <p class="experience-title">Web Developer & Blogger</p>
-                    <p class="experience-company">Freelance & Codearbro.com | 2018 - Present</p>
+                    <p class="experience-title">CRM Functional Consultant (ZOHO)</p>
+                    <p class="experience-company">Infodrive India PVT LTD - Delhi | Sep 2022 - Dec 2023</p>
+                    <ul class="experience-details">
+                        <li>Handle development for CRM Desk Bookings and Zoho</li>
+                        <li>Integration with WhatsApp and calling systems</li>
+                        <li>Created API for sending data from database in VOLZA.COM</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="education" class="education-section">
-        <!-- Previous education section content remains the same -->
+        <div class="education-container">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="education-card">
+                <h3 class="education-degree">Master of Computer Application</h3>
+                <p class="education-institute">Bundelkhand University Campus</p>
+                <p class="education-period">2019 - 2022</p>
+            </div>
+            
+            <div class="education-card">
+                <h3 class="education-degree">Bachelor of Computer Application</h3>
+                <p class="education-institute">Yug Chetna Mahavidyalaya - Bundelkhand University</p>
+                <p class="education-period">2015 - 2018</p>
+            </div>
+        </div>
     </section>
 
-    <section class="full-experience-section">
+    <section id="experience" class="full-experience-section">
         <div class="skills-container">
             <h2 class="section-title">Professional Journey</h2>
             
             <div class="timeline">
-                <!-- Current position at Infodrive -->
+                <!-- Current position at CRM Masters -->
                 <div class="timeline-item">
-                    <p class="timeline-date">September 2022 - Present</p>
-                    <h3 class="timeline-title">CRM Functional Consultant (ZOHO)</h3>
-                    <p class="timeline-company">Infodrive India PVT LTD - Delhi</p>
+                    <p class="timeline-date">January 2024 - Present</p>
+                    <h3 class="timeline-title">Software Developer</h3>
+                    <p class="timeline-company">CRM Masters Infotech LLP</p>
                     <div class="timeline-description">
                         <ul>
-                            <li>Creating Custom Functions and Workflows</li>
-                            <li>Managing layouts and fields per user requirements</li>
-                            <li>Creating custom views and templates</li>
-                            <li>Integration with WhatsApp and calling systems</li>
+                            <li>Working on Hubspot, Zoho CRM, WordPress, Shopify, Zoho Creator, and across Zoho projects</li>
+                            <li>Technologies: Nodejs, ReactJs, PHP, Deluge, SQL, Javascript</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Web Development Teaching -->
+                <!-- Position at Infodrive -->
+                <div class="timeline-item">
+                    <p class="timeline-date">September 2022 - December 2023</p>
+                    <h3 class="timeline-title">CRM Functional Consultant (ZOHO)</h3>
+                    <p class="timeline-company">Infodrive India PVT LTD - Delhi</p>
+                    <div class="timeline-description">
+                        <ul>
+                            <li>Handle all development regarding CRM Desk Bookings and Zoho</li>
+                            <li>Work on integration with WhatsApp and calling system</li>
+                            <li>Created API for sending Data from database in VOLZA.COM</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Web Developer at Adhyayanshrot -->
+                <div class="timeline-item">
+                    <p class="timeline-date">June 2022 - September 2022</p>
+                    <h3 class="timeline-title">Web Developer</h3>
+                    <p class="timeline-company">Adhyayanshrot Infocom PVT LTD</p>
+                    <div class="timeline-description">
+                        <ul>
+                            <li>Worked as Web Developer on DistancePathshala.com website</li>
+                            <li>Developed and deployed application to AWS</li>
+                            <li>Created API to get college names and details using NodeJS</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Teaching Position -->
                 <div class="timeline-item">
                     <p class="timeline-date">July 2018 - May 2019</p>
                     <h3 class="timeline-title">Web Development Teacher</h3>
                     <p class="timeline-company">Yug Chetna Mahavidyalaya, Hamirpur</p>
                     <p class="timeline-description">Conducted web development courses and trained students in modern web technologies</p>
-                </div>
-
-                <!-- Freelance Work -->
-                <div class="timeline-item">
-                    <p class="timeline-date">June 2022 - July 2022</p>
-                    <h3 class="timeline-title">Web Developer Freelance</h3>
-                    <p class="timeline-company">Adhyayanshrot Infocom PVT LTD</p>
-                    <p class="timeline-description">Developed and deployed DistancePathshala.com using React and AWS</p>
-                </div>
-
-                <!-- Digital Marketing Internship -->
-                <div class="timeline-item">
-                    <p class="timeline-date">May 2021 - June 2021</p>
-                    <h3 class="timeline-title">Social Media Marketing Intern</h3>
-                    <p class="timeline-company">Digladder</p>
-                    <p class="timeline-description">Gained hands-on experience in social media marketing strategies</p>
                 </div>
             </div>
         </div>
@@ -590,6 +680,8 @@
                         <li>PHP</li>
                         <li>JavaScript</li>
                         <li>C#</li>
+                        <li>SQL</li>
+                        <li>Deluge</li>
                     </ul>
                 </div>
                 
@@ -602,6 +694,8 @@
                         <li>Laravel</li>
                         <li>Bootstrap</li>
                         <li>Material UI</li>
+                        <li>MVC</li>
+                        <li>REST API</li>
                     </ul>
                 </div>
                 
@@ -614,6 +708,10 @@
                         <li>AWS</li>
                         <li>Postman</li>
                         <li>Zoho CRM</li>
+                        <li>Hubspot</li>
+                        <li>Shopify</li>
+                        <li>VSCode</li>
+                        <li>SQL Server</li>
                     </ul>
                 </div>
                 
@@ -641,10 +739,48 @@
     </section>
 
     <section id="projects" class="projects">
-        <div class="projects-container">
+        <div class="skills-container">
             <h2 class="section-title">Featured Projects</h2>
             
             <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">ZOHO Integrations</h3>
+                    </div>
+                    <p class="project-description">Integration of Zoho bookings, desk with Zoho CRM and Whatsapp application with auto message sending</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Deluge</span>
+                        <span class="tech-tag">API</span>
+                        <span class="tech-tag">Automation</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">ChatBOT</h3>
+                    </div>
+                    <p class="project-description">Created chatbots using Dialogflow, Aisansy and saleiq for marketing and customer support</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Dialogflow</span>
+                        <span class="tech-tag">AI</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Volza AI</h3>
+                        <a href="https://volza.ai" class="project-link">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    <p class="project-description">Created a website using WordPress Framework</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">WordPress</span>
+                        <span class="tech-tag">PHP</span>
+                    </div>
+                </div>
+
                 <div class="project-card">
                     <div class="project-header">
                         <h3 class="project-title">Distance Pathshala</h3>
@@ -652,12 +788,13 @@
                             <i class="fas fa-external-link-alt"></i>
                         </a>
                     </div>
-                    <p class="project-description">React web application with API integration and AWS deployment</p>
+                    <p class="project-description">React web application showcasing cases and using API for data</p>
                     <div class="project-tech">
                         <span class="tech-tag">React</span>
                         <span class="tech-tag">Node.js</span>
                         <span class="tech-tag">AWS</span>
                         <span class="tech-tag">Material UI</span>
+                        <span class="tech-tag">Bootstrap</span>
                     </div>
                 </div>
                 
@@ -673,31 +810,6 @@
                         <span class="tech-tag">WordPress</span>
                         <span class="tech-tag">SEO</span>
                         <span class="tech-tag">PHP</span>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">Goonline</h3>
-                    </div>
-                    <p class="project-description">Social networking platform with real-time chat functionality</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">PHP</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">WebSockets</span>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">Carbookk</h3>
-                    </div>
-                    <p class="project-description">Car booking platform with modern UI and booking system</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Bootstrap</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">HTML/CSS</span>
                     </div>
                 </div>
             </div>
@@ -726,5 +838,15 @@
             </div>
         </div>
     </section>
+
+    <footer style="background: #0f172a; padding: 2rem; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+        <p>&copy; 2025 Suraj Verma. All Rights Reserved.</p>
+        <div class="social-links" style="justify-content: center; margin-top: 1rem;">
+            <a href="https://github.com/codearbro"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/surajonn"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:kumarsuraj9585@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="tel:+916394370427"><i class="fas fa-phone"></i></a>
+        </div>
+    </footer>
 </body>
 </html>
